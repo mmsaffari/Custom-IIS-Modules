@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.IO;
 using System.Web;
 using System.Web.Configuration;
@@ -10,8 +11,6 @@ namespace MMS.BetterDirectoryListing {
 	/// </summary>
 	public class DirectoryBrowsingModule : IHttpModule {
 		public const string DirectoryBrowsingContextKey = "MMS.BetterDirectoryListing";
-		private DirectoryBrowsingModuleConfigurationSection config;
-
 
 		#region IHttpModule Members
 
@@ -24,27 +23,12 @@ namespace MMS.BetterDirectoryListing {
 		private void OnPreRequestHandlerExecute(object sender, EventArgs e) {
 			HttpContext context = (sender as HttpApplication).Context;
 
-			config = WebConfigurationManager.GetSection("directoryBrowsing", context.Request.Path) as DirectoryBrowsingModuleConfigurationSection;
-			if (config == null) { throw new Exception("The <directoryBrowsing> configuration section is not registered on web.config."); }
-			if (!config.Enabled) { throw new HttpException(403, null); }
-
-			if (Directory.Exists(context.Request.PhysicalPath)) {
-				string[] dirs = Directory.GetDirectories(context.Request.PhysicalPath);
-				string[] files = Directory.GetFiles(context.Request.PhysicalPath);
-				ListEntryCollection listing = new ListEntryCollection(dirs.Length+files.Length);
-				foreach (var item in dirs) {
-					listing.Add(new ListEntry(VirtualPathUtility.Combine(context.Request.Path + "/", Path.GetDirectoryName(item)), item, true));
-				}
-				foreach (var item in files) {
-					listing.Add(new ListEntry(VirtualPathUtility.Combine(context.Request.Path + "/", Path.GetFileName(item)), item, false));
-				}
-
-				context.Items[DirectoryBrowsingContextKey] = listing;
-
-				IHttpHandler template = new Template();
-				template.ProcessRequest(context);
-				context.Handler = null;
-			}
+			string configPath = "/web.config";
+			Configuration config = WebConfigurationManager.OpenWebConfiguration(configPath);
+			ConfigurationSection section = (ConfigurationSection)config.GetSection("system.webServer/directoryBrowse");
+			context.Response.Clear();
+			context.Response.Write(string.Format("[{0}]\n{1}", config, section.GetType()));
+			context.Response.Flush();
 		}
 
 		#endregion
