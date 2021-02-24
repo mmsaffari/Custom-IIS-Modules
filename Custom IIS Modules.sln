@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterDirectoryListing", "BetterDirectoryListing\BetterDirectoryListing.csproj", "{635C41E2-9BF9-42D7-B505-757ED2CDDEE9}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://dirbro.local", "http://dirbro.local", "{10584E09-DAFC-4BE2-8B04-F66E1EDED1EF}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/dirbro.local"
+		Debug.AspNetCompiler.PhysicalPath = "DirectoryBrowsingTestSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\dirbro.local\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/dirbro.local"
+		Release.AspNetCompiler.PhysicalPath = "DirectoryBrowsingTestSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\dirbro.local\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "DirectoryBrowsingTestSite\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{635C41E2-9BF9-42D7-B505-757ED2CDDEE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{635C41E2-9BF9-42D7-B505-757ED2CDDEE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{635C41E2-9BF9-42D7-B505-757ED2CDDEE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{635C41E2-9BF9-42D7-B505-757ED2CDDEE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10584E09-DAFC-4BE2-8B04-F66E1EDED1EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10584E09-DAFC-4BE2-8B04-F66E1EDED1EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10584E09-DAFC-4BE2-8B04-F66E1EDED1EF}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{10584E09-DAFC-4BE2-8B04-F66E1EDED1EF}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A34EA58C-940A-4506-8AA9-6F751BE7A91D}
+	EndGlobalSection
+EndGlobal
