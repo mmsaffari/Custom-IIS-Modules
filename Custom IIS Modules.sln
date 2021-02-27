@@ -26,6 +26,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://dirbro.local", "http
 		SlnRelativePath = "DirectoryBrowsingTestSite\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{4041C969-66D4-45A8-BFFE-D70A759CD698}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{10584E09-DAFC-4BE2-8B04-F66E1EDED1EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10584E09-DAFC-4BE2-8B04-F66E1EDED1EF}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{10584E09-DAFC-4BE2-8B04-F66E1EDED1EF}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{4041C969-66D4-45A8-BFFE-D70A759CD698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4041C969-66D4-45A8-BFFE-D70A759CD698}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4041C969-66D4-45A8-BFFE-D70A759CD698}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4041C969-66D4-45A8-BFFE-D70A759CD698}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

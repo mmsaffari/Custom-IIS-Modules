@@ -9,17 +9,21 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace MMS.BetterDirectoryListing {
-	class Template:Page {
+	class Template : Page {
 
-        //Repeater DirectoryListing = new Repeater();
-        //Label FileCount = new Label();
+		Repeater DirectoryListing = new Repeater();
+		//Label FileCount = new Label();
 
 		protected override void OnInit(EventArgs e) {
 			base.OnInit(e);
-            Controls.Add(ParseControl(Properties.Resources.Page));
-        }
+			DirectoryListing
+		}
 		void Page_Load() {
-            
-        }
-    }
+			using (var writer = new HtmlTextWriter(this.Response.Output)) {
+				writer.Write(Properties.Resources.Page);
+				DirectoryListing.RenderControl(writer);
+			}
+
+		}
+	}
 }

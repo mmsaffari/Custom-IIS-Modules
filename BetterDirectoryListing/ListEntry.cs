@@ -29,7 +29,7 @@ namespace MMS.BetterDirectoryListing {
 			_virtualPath = virtualPath;
 			_path = path;
 			_isDirectory = isDirectory;
-		} 
+		}
 		#endregion
 
 		#region Properties
@@ -82,7 +82,19 @@ namespace MMS.BetterDirectoryListing {
 		#endregion
 
 		#region Methods
-
+		public override string ToString() {
+			var props = GetType().GetProperties().OrderBy(p => p.Name).ToList();
+			StringBuilder sb = new StringBuilder();
+			sb.Append("{");
+			for (int i = 0; i < props.Count; i++) {
+				var p = props[i];
+				sb.Append(p.Name).Append("=");
+				sb.Append(p.GetValue(this, null));
+				if (i < props.Count - 1) sb.Append(", ");
+			}
+			sb.Append("}");
+			return sb.ToString();
+		}
 		#endregion
 	}
 }

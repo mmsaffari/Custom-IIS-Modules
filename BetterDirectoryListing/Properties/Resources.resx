@@ -198,4 +198,28 @@
     &lt;/body&gt;
 &lt;/html&gt;</value>
   </data>
+  <data name="rpt" xml:space="preserve">
+    <value>&lt;asp:Repeater ID="DirectoryListing" runat="server" EnableViewState="False"&gt;
+                &lt;HeaderTemplate&gt;
+                    &lt;table id="DirectoryListing" style="width:1000px; text-align:left; margin-left: 0px;"&gt;
+                        &lt;thead&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;Name&lt;/th&gt;
+                        &lt;/tr&gt;
+                        &lt;tbody&gt;
+                &lt;/HeaderTemplate&gt;
+                &lt;ItemTemplate&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;i class="far fa-&lt;%# GetFileIconCss(Path.GetExtension(((DirectoryListingEntry)Container.DataItem).Path)) %&gt;"&gt;&lt;/i&gt;
+                            &lt;a href="&lt;%# GetHyperLink((DirectoryListingEntry)Container.DataItem) %&gt;"&gt;&lt;%# ((DirectoryListingEntry)Container.DataItem).Filename %&gt;&lt;/a&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/ItemTemplate&gt;
+                &lt;FooterTemplate&gt;
+                    &lt;/tbody&gt;
+                    &lt;/table&gt;
+                &lt;/FooterTemplate&gt;
+            &lt;/asp:Repeater&gt;</value>
+  </data>
 </root>

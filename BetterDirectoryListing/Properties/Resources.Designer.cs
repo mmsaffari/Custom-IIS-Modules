@@ -77,5 +77,26 @@ namespace MMS.BetterDirectoryListing.Properties {
                 return ResourceManager.GetString("Page", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;asp:Repeater ID=&quot;DirectoryListing&quot; runat=&quot;server&quot; EnableViewState=&quot;False&quot;&gt;
+        ///                &lt;HeaderTemplate&gt;
+        ///                    &lt;table id=&quot;DirectoryListing&quot; style=&quot;width:1000px; text-align:left; margin-left: 0px;&quot;&gt;
+        ///                        &lt;thead&gt;
+        ///                        &lt;tr&gt;
+        ///                            &lt;th&gt;Name&lt;/th&gt;
+        ///                        &lt;/tr&gt;
+        ///                        &lt;tbody&gt;
+        ///                &lt;/HeaderTemplate&gt;
+        ///                &lt;ItemTemplate&gt;
+        ///                    &lt;tr&gt;
+        ///                        &lt;td&gt;
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string rpt {
+            get {
+                return ResourceManager.GetString("rpt", resourceCulture);
+            }
+        }
     }
 }
