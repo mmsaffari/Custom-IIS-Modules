@@ -1,5 +1,9 @@
 ﻿using System;
+<<<<<<< HEAD
 using System.Linq;
+=======
+using System.Configuration;
+>>>>>>> b1d242ebbd4d8f7b1a56a30abd0252e2bcd7599a
 using System.IO;
 using System.Web;
 using System.Web.Configuration;
@@ -10,10 +14,14 @@ namespace MMS.BetterDirectoryListing {
 	/// 
 	/// </summary>
 	public class DirectoryBrowsingModule : IHttpModule {
+<<<<<<< HEAD
 
 		public const string DirectoryBrowsingContextKey = "MMS.BetterDirectoryListing";
 		public string ModuleName => "DirectoryBrowsingModule";
 		private string[] sensitiveItems = { "bin", "aspnet_client", "web.config" };
+=======
+		public const string DirectoryBrowsingContextKey = "MMS.BetterDirectoryListing";
+>>>>>>> b1d242ebbd4d8f7b1a56a30abd0252e2bcd7599a
 
 		#region IHttpModule Members
 
@@ -26,6 +34,7 @@ namespace MMS.BetterDirectoryListing {
 		private void OnPreRequestHandlerExecute(object sender, EventArgs e) {
 			HttpContext context = (sender as HttpApplication).Context;
 
+<<<<<<< HEAD
 			var config = WebConfigurationManager.GetSection(
 				DirectoryBrowsingModuleConfigurationSection.ConfigurationSectionName,
 				context.Request.Path
@@ -57,6 +66,14 @@ namespace MMS.BetterDirectoryListing {
 				template.ProcessRequest(context);
 				context.Handler = null;
 			}
+=======
+			string configPath = "/web.config";
+			Configuration config = WebConfigurationManager.OpenWebConfiguration(configPath);
+			ConfigurationSection section = (ConfigurationSection)config.GetSection("system.webServer/directoryBrowse");
+			context.Response.Clear();
+			context.Response.Write(string.Format("[{0}]\n{1}", config, section.GetType()));
+			context.Response.Flush();
+>>>>>>> b1d242ebbd4d8f7b1a56a30abd0252e2bcd7599a
 		}
 
 		#endregion

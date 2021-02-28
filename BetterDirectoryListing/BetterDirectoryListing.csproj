@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DirectoryBrowseSecrion.cs" />
     <Compile Include="DirectoryBrowsingModule.cs" />
     <Compile Include="DirectoryBrowsingModuleConfigurationSection.cs" />
     <Compile Include="ListEntry.cs" />
