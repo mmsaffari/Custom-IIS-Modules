@@ -5,10 +5,10 @@
 		{
 			"library": "datatables@1.10.21",
 			"destination": "Resources/datatables"
-		},
-		{
-			"library": "font-awesome@5.15.2",
-			"destination": "Resources/font-awesome/"
-		}
+		}//,
+		//{
+		//	"library": "font-awesome@5.15.2",
+		//	"destination": "Resources/font-awesome/"
+		//}
 	]
 }

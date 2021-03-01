@@ -105,54 +105,6 @@
     <EmbeddedResource Include="Resources\datatables\js\dataTables.uikit.min.js" />
     <EmbeddedResource Include="Resources\datatables\js\jquery.dataTables.js" />
     <EmbeddedResource Include="Resources\datatables\js\jquery.dataTables.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\css\all.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\all.min.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\brands.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\brands.min.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\fontawesome.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\fontawesome.min.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\regular.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\regular.min.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\solid.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\solid.min.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\svg-with-js.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\svg-with-js.min.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\v4-shims.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\v4-shims.min.css" />
-    <EmbeddedResource Include="Resources\font-awesome\js\all.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\all.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\brands.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\brands.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\conflict-detection.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\conflict-detection.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\fontawesome.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\fontawesome.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\regular.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\regular.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\solid.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\solid.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\v4-shims.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\v4-shims.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\sprites\brands.svg" />
-    <EmbeddedResource Include="Resources\font-awesome\sprites\regular.svg" />
-    <EmbeddedResource Include="Resources\font-awesome\sprites\solid.svg" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-brands-400.svg" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-regular-400.svg" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-solid-900.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-brands-400.eot" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-brands-400.ttf" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-brands-400.woff" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-brands-400.woff2" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-regular-400.eot" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-regular-400.ttf" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-regular-400.woff" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-regular-400.woff2" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-solid-900.eot" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-solid-900.ttf" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-solid-900.woff" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-solid-900.woff2" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
