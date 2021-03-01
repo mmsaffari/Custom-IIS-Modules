@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DirectoryBrowseSecrion.cs" />
     <Compile Include="DirectoryBrowsingModule.cs" />
     <Compile Include="DirectoryBrowsingModuleConfigurationSection.cs" />
     <Compile Include="ListEntry.cs" />
@@ -62,101 +63,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="libman.json" />
-    <EmbeddedResource Include="Resources\datatables\css\dataTables.bootstrap.css" />
-    <EmbeddedResource Include="Resources\datatables\css\dataTables.bootstrap.min.css" />
-    <EmbeddedResource Include="Resources\datatables\css\dataTables.bootstrap4.css" />
-    <EmbeddedResource Include="Resources\datatables\css\dataTables.bootstrap4.min.css" />
-    <EmbeddedResource Include="Resources\datatables\css\dataTables.foundation.css" />
-    <EmbeddedResource Include="Resources\datatables\css\dataTables.foundation.min.css" />
-    <EmbeddedResource Include="Resources\datatables\css\dataTables.jqueryui.css" />
-    <EmbeddedResource Include="Resources\datatables\css\dataTables.jqueryui.min.css" />
-    <EmbeddedResource Include="Resources\datatables\css\dataTables.material.css" />
-    <EmbeddedResource Include="Resources\datatables\css\dataTables.material.min.css" />
-    <EmbeddedResource Include="Resources\datatables\css\dataTables.semanticui.css" />
-    <EmbeddedResource Include="Resources\datatables\css\dataTables.semanticui.min.css" />
-    <EmbeddedResource Include="Resources\datatables\css\dataTables.uikit.css" />
-    <EmbeddedResource Include="Resources\datatables\css\dataTables.uikit.min.css" />
-    <EmbeddedResource Include="Resources\datatables\css\jquery.dataTables.css" />
-    <EmbeddedResource Include="Resources\datatables\css\jquery.dataTables.min.css" />
-    <EmbeddedResource Include="Resources\datatables\css\jquery.dataTables_themeroller.css" />
-    <EmbeddedResource Include="Resources\datatables\css\jquery.dataTables_themeroller.min.css" />
-    <EmbeddedResource Include="Resources\datatables\images\sort_asc.png" />
-    <EmbeddedResource Include="Resources\datatables\images\sort_asc_disabled.png" />
-    <EmbeddedResource Include="Resources\datatables\images\sort_both.png" />
-    <EmbeddedResource Include="Resources\datatables\images\sort_desc.png" />
-    <EmbeddedResource Include="Resources\datatables\images\sort_desc_disabled.png" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.bootstrap.js" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.bootstrap.min.js" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.bootstrap4.js" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.bootstrap4.min.js" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.dataTables.js" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.dataTables.min.js" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.foundation.js" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.foundation.min.js" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.jqueryui.js" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.jqueryui.min.js" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.material.js" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.material.min.js" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.semanticui.js" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.semanticui.min.js" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.uikit.js" />
-    <EmbeddedResource Include="Resources\datatables\js\dataTables.uikit.min.js" />
-    <EmbeddedResource Include="Resources\datatables\js\jquery.dataTables.js" />
-    <EmbeddedResource Include="Resources\datatables\js\jquery.dataTables.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\css\all.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\all.min.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\brands.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\brands.min.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\fontawesome.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\fontawesome.min.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\regular.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\regular.min.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\solid.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\solid.min.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\svg-with-js.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\svg-with-js.min.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\v4-shims.css" />
-    <EmbeddedResource Include="Resources\font-awesome\css\v4-shims.min.css" />
-    <EmbeddedResource Include="Resources\font-awesome\js\all.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\all.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\brands.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\brands.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\conflict-detection.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\conflict-detection.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\fontawesome.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\fontawesome.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\regular.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\regular.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\solid.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\solid.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\v4-shims.js" />
-    <EmbeddedResource Include="Resources\font-awesome\js\v4-shims.min.js" />
-    <EmbeddedResource Include="Resources\font-awesome\sprites\brands.svg" />
-    <EmbeddedResource Include="Resources\font-awesome\sprites\regular.svg" />
-    <EmbeddedResource Include="Resources\font-awesome\sprites\solid.svg" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-brands-400.svg" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-regular-400.svg" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-solid-900.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-brands-400.eot" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-brands-400.ttf" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-brands-400.woff" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-brands-400.woff2" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-regular-400.eot" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-regular-400.ttf" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-regular-400.woff" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-regular-400.woff2" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-solid-900.eot" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-solid-900.ttf" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-solid-900.woff" />
-    <EmbeddedResource Include="Resources\font-awesome\webfonts\fa-solid-900.woff2" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>COPY "$(TargetDir)\$(ProjectName).*" "$(SolutionDir)DirectoryBrowsingTestSite\bin\"
-</PostBuildEvent>
+    <PostBuildEvent>COPY "$(TargetPath)" "$(SolutionDir)DirectoryBrowsingTestSite\bin\"</PostBuildEvent>
   </PropertyGroup>
 </Project>
