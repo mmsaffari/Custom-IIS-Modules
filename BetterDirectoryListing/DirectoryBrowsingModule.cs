@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Collections.Generic;
 using System.Resources;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace MMS.BetterDirectoryListing {
 	/// <summary>
@@ -29,17 +30,54 @@ namespace MMS.BetterDirectoryListing {
 		}
 
 		private void OnBeginRequest(object sender, EventArgs e) {
-			Dictionary<string, string> Mimes = new Dictionary<string, string> {
-				{".css", "text/css"},
-				{".js", "text/javascript"}
-			};
-
 			HttpContext context = (sender as HttpApplication).Context;
 			HttpRequest Request = context.Request;
 			HttpResponse Response = context.Response;
-			if (Request.Path.ToLower().StartsWith("/static/")) {
+
+			Regex rSlashes = new Regex("[/]{2,}");
+			if (rSlashes.IsMatch(Request.Path)) { 
+				Response.RedirectPermanent(rSlashes.Replace(Request.Path, "/"));
+				Response.Flush();
+				Response.End();
+			}
+
+			var config = WebConfigurationManager.GetSection(
+				DirectoryBrowsingModuleConfigurationSection.ConfigurationSectionName,
+				context.Request.Path
+			) as DirectoryBrowsingModuleConfigurationSection;
+			if (config == null) {
+				throw new Exception(string.Format(
+					"The <{0} /> configuration section is not registered on web.config.",
+					DirectoryBrowsingModuleConfigurationSection.ConfigurationSectionName
+				));
+			}
+			if (Request.Path == "/" && !config.AllowRoot) {
+				Response.StatusCode = 403;
+				Response.Flush();
+				Response.End();
+				throw new HttpException(403, null);
+			}
+
+			// Use Powershell to update this list.
+			// Get-ChildItem -Recurse | Select-Object -Property Extension -Unique
+			Dictionary<string, string> Mimes = new Dictionary<string, string> {
+				{".css", "text/css"},
+				{".eot", "application/vnd.ms-fontobject"},
+				{".ico", "image/vnd.microsoft.icon"},
+				{".js", "text/javascript"},
+				{".map", "text/plain"},
+				{".png", "image/png"},
+				{".svg", "image/svg+xml"},
+				{".ttf", "font/ttf"},
+				{".woff", "font/woff"},
+				{".woff2", "font/woff2"}
+			};
+
+			if (Request.Path.ToLower().StartsWith("/static/") || Request.Path.ToLower() == "/favicon.ico") {
+				string pfn = Request.Path.Replace("/", ".");
+				if (pfn.ToLower().StartsWith(".static")) pfn = pfn.Remove(0, ".static".Length);
+				string resName = string.Format("MMS.BetterDirectoryListing.Resources{0}", pfn);
 				var resNames = GetType().Assembly.GetManifestResourceNames();
-				string resName = string.Format("MMS.BetterDirectoryListing.Resources{0}", Request.Path.Replace("/", ".").Remove(0, "/static".Length));
 				if (resNames.Any(name => name.ToLower() == resName.ToLower())) {
 					var bytes = GetResource(resNames.Single(name => name.ToLower() == resName.ToLower()));
 					if (bytes != null) {
@@ -80,7 +118,12 @@ namespace MMS.BetterDirectoryListing {
 					DirectoryBrowsingModuleConfigurationSection.ConfigurationSectionName
 				));
 			}
-			if (!config.Enabled) { throw new HttpException(403, null); }
+			if (!config.Enabled) {
+				context.Response.StatusCode = 403;
+				context.Response.Flush();
+				context.Response.End();
+				throw new HttpException(403, null);
+			}
 
 			if (Directory.Exists(context.Request.PhysicalPath)) {
 				string[] dirs = Directory.GetDirectories(context.Request.PhysicalPath);
@@ -96,6 +139,7 @@ namespace MMS.BetterDirectoryListing {
 				}
 
 				context.Items[DirectoryBrowsingContextKey] = listing;
+				context.Items["isRootAllowed"] = config.AllowRoot;
 
 				Template template = new Template();
 				template.ProcessRequest(context);
@@ -104,8 +148,6 @@ namespace MMS.BetterDirectoryListing {
 		}
 
 		#endregion
-
-
 
 	}
 }

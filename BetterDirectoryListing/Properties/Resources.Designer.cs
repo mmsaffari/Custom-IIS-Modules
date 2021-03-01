@@ -59,5 +59,75 @@ namespace MMS.BetterDirectoryListing.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to $(document).ready(function(){
+        ///			$(&apos;#DirectoryListing&apos;).DataTable({
+        ///				&quot;paging&quot;: false,
+        ///				&quot;fixedHeader&quot;: {
+        ///					&quot;header&quot;:true
+        ///				}
+        ///			});
+        ///		});.
+        /// </summary>
+        internal static string inlineScriptAtEnd {
+            get {
+                return ResourceManager.GetString("inlineScriptAtEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to a { text-decoration: none; }
+        ///a:hover { text-decoration: underline; }
+        ///p { font-family: verdana; font-size: 10pt; }
+        ///h2 { font-family: verdana; margin: 0px; }
+        ///table { width: 800px; text-align: left; margin-left: 0px; border: 0px; }
+        ///td { font-family: verdana; font-size: 10pt; }
+        ///th:nth-child(odd), td:nth-child(odd) { background-color: #f9f9f9; }
+        ///td { border-top: 1pt solid #dddddd; }
+        ///th { border-top: 1pt solid #dddddd; }
+        ///th:first-child, td:first-child { border-left: 1pt solid #dddddd; }
+        ///th:last-child, t [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string inlineStyleInHead {
+            get {
+                return ResourceManager.GetString("inlineStyleInHead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;asp:Repeater ID=&quot;DirectoryListing&quot; runat=&quot;server&quot; EnableViewState=&quot;False&quot;&gt;
+        ///			&lt;HeaderTemplate&gt;
+        ///				&lt;table id=&quot;DirectoryListing&quot; style=&quot;width: 100%&quot;&gt;
+        ///					&lt;thead&gt;
+        ///						&lt;tr&gt;
+        ///							&lt;th&gt;Name&lt;/th&gt;
+        ///							&lt;th&gt;Created&lt;/th&gt;
+        ///							&lt;th&gt;Last Modified&lt;/th&gt;
+        ///							&lt;th&gt;Size&lt;/th&gt;
+        ///						&lt;/tr&gt;
+        ///					&lt;/thead&gt;
+        ///						&lt;tbody&gt;
+        ///			&lt;/HeaderTemplate&gt;
+        ///			&lt;ItemTemplate&gt;
+        ///				&lt;tr&gt;
+        ///					&lt;td&gt;
+        ///						&lt;i class=&quot;far fa-&lt;%# GetFileIconCss(Path.GetExtension(((ListEntry)Container.DataItem).Path)) %&gt;&quot;&gt;&lt;/i&gt;
+        ///						&lt;a href=&quot;&lt;%#  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string rptMain {
+            get {
+                return ResourceManager.GetString("rptMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;i class=&quot;fa fa-level-up-alt&quot; /&gt; To Parent Directory.
+        /// </summary>
+        internal static string toParentDirectory {
+            get {
+                return ResourceManager.GetString("toParentDirectory", resourceCulture);
+            }
+        }
     }
 }

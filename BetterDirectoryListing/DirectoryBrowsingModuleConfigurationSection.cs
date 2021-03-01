@@ -15,10 +15,12 @@ namespace MMS.BetterDirectoryListing {
 		private static ConfigurationPropertyCollection _properties = new ConfigurationPropertyCollection();
 		private static readonly ConfigurationProperty _propEnabled = new ConfigurationProperty("enabled", typeof(bool), true);
 		private static readonly ConfigurationProperty _propHideSensitiveFiles = new ConfigurationProperty("hideSensitiveFiles", typeof(bool), true);
+		private static readonly ConfigurationProperty _propAllowRoot = new ConfigurationProperty("allowRoot", typeof(bool), false);
 
 		static DirectoryBrowsingModuleConfigurationSection() {
 			_properties.Add(_propEnabled);
 			_properties.Add(_propHideSensitiveFiles);
+			_properties.Add(_propAllowRoot);
 		}
 
 		protected override ConfigurationPropertyCollection Properties => _properties;
@@ -33,6 +35,12 @@ namespace MMS.BetterDirectoryListing {
 		public bool HideSensitiveFiles {
 			get => (bool)base[_propHideSensitiveFiles];
 			set => base[_propHideSensitiveFiles] = value;
+		}
+
+		[ConfigurationProperty("allowRoot", DefaultValue =false)]
+		public bool AllowRoot {
+			get => (bool)base[_propAllowRoot];
+			set => base[_propAllowRoot] = value;
 		}
 	}
 }

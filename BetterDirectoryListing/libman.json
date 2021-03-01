@@ -12,7 +12,7 @@
     },
     {
         "library": "font-awesome@5.15.2",
-        "destination": "Resources/font-awesome/"
+        "destination": "Resources/font_awesome/"
     }
   ]
 }
