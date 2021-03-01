@@ -59,44 +59,5 @@ namespace MMS.BetterDirectoryListing.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
-        ///    &lt;head&gt;
-        ///        &lt;title&gt;Directory contents of &lt;%= Context.Request.Path %&gt;&lt;/title&gt;
-        ///        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/static/datatables/datatables.min.css&quot;/&gt;
-        ///        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/static/fa/fontawesome-all.css&quot;/&gt;
-        ///        &lt;style type=&quot;text/css&quot;&gt;
-        ///            a { text-decoration: none; }
-        ///            a:hover { text-decoration: underline; }
-        ///            p {font-family: verdana; font-size: 10pt; }
-        ///            h [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Page {
-            get {
-                return ResourceManager.GetString("Page", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;asp:Repeater ID=&quot;DirectoryListing&quot; runat=&quot;server&quot; EnableViewState=&quot;False&quot;&gt;
-        ///                &lt;HeaderTemplate&gt;
-        ///                    &lt;table id=&quot;DirectoryListing&quot; style=&quot;width:1000px; text-align:left; margin-left: 0px;&quot;&gt;
-        ///                        &lt;thead&gt;
-        ///                        &lt;tr&gt;
-        ///                            &lt;th&gt;Name&lt;/th&gt;
-        ///                        &lt;/tr&gt;
-        ///                        &lt;tbody&gt;
-        ///                &lt;/HeaderTemplate&gt;
-        ///                &lt;ItemTemplate&gt;
-        ///                    &lt;tr&gt;
-        ///                        &lt;td&gt;
-        /// [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string rpt {
-            get {
-                return ResourceManager.GetString("rpt", resourceCulture);
-            }
-        }
     }
 }
