@@ -65,6 +65,14 @@ namespace MMS.BetterDirectoryListing {
 			List.Insert(index, entry);
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="entry"></param>
+		public void Remove(ListEntry entry) {
+			List.Remove(entry);
+		}
+
 		#endregion
 
 		#region IEnumerable Implementation

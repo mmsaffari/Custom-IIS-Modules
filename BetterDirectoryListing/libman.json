@@ -1,14 +1,18 @@
 {
   "version": "1.0",
   "defaultProvider": "cdnjs",
-	"libraries": [
-		{
-			"library": "datatables@1.10.21",
-			"destination": "Resources/datatables"
-		}//,
-		//{
-		//	"library": "font-awesome@5.15.2",
-		//	"destination": "Resources/font-awesome/"
-		//}
-	]
+  "libraries": [
+    {
+      "library": "jquery@3.5.1",
+      "destination": "Resources/jquery"
+    },
+    {
+      "library": "datatables@1.10.21",
+      "destination": "Resources/datatables"
+    },
+    {
+        "library": "font-awesome@5.15.2",
+        "destination": "Resources/font-awesome/"
+    }
+  ]
 }

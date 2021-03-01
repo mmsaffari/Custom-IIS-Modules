@@ -78,7 +78,7 @@ namespace MMS.BetterDirectoryListing {
 		/// <summary>
 		/// 
 		/// </summary>
-		public string ViretualPath => _virtualPath;
+		public string VirtualPath => _virtualPath;
 		#endregion
 
 		#region Methods
