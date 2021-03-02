@@ -82,6 +82,10 @@ namespace MMS.BetterDirectoryListing {
 		#endregion
 
 		#region Methods
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
 		public override string ToString() {
 			var props = GetType().GetProperties().OrderBy(p => p.Name).ToList();
 			StringBuilder sb = new StringBuilder();

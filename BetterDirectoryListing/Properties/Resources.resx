@@ -141,38 +141,7 @@ th:first-child, td:first-child { border-left: 1pt solid #dddddd; }
 th:last-child, td:last-child { border-right: 1pt solid #dddddd; }
 .far { font-size: 20px; width: 25px; }</value>
   </data>
-  <data name="rptMain" xml:space="preserve">
-    <value>&lt;asp:Repeater ID="DirectoryListing" runat="server" EnableViewState="False"&gt;
-			&lt;HeaderTemplate&gt;
-				&lt;table id="DirectoryListing" style="width: 100%"&gt;
-					&lt;thead&gt;
-						&lt;tr&gt;
-							&lt;th&gt;Name&lt;/th&gt;
-							&lt;th&gt;Created&lt;/th&gt;
-							&lt;th&gt;Last Modified&lt;/th&gt;
-							&lt;th&gt;Size&lt;/th&gt;
-						&lt;/tr&gt;
-					&lt;/thead&gt;
-						&lt;tbody&gt;
-			&lt;/HeaderTemplate&gt;
-			&lt;ItemTemplate&gt;
-				&lt;tr&gt;
-					&lt;td&gt;
-						&lt;i class="far fa-&lt;%# GetFileIconCss(Path.GetExtension(((ListEntry)Container.DataItem).Path)) %&gt;"&gt;&lt;/i&gt;
-						&lt;a href="&lt;%# GetHyperLink((ListEntry)Container.DataItem) %&gt;"&gt;&lt;%# ((ListEntry)Container.DataItem).Filename %&gt;&lt;/a&gt;
-					&lt;/td&gt;
-					&lt;td&gt;&lt;%=DateTime.Now %&gt;&lt;/td&gt;
-					&lt;td&gt;&lt;%=DateTime.Now.AddDays(rng.NextDouble()*-3).AddSeconds(rng.NextDouble()*-86400) %&gt;&lt;/td&gt;
-					&lt;td&gt;4.5GB&lt;/td&gt;
-				&lt;/tr&gt;
-			&lt;/ItemTemplate&gt;
-			&lt;FooterTemplate&gt;
-				&lt;/tbody&gt;
-                    &lt;/table&gt;
-			&lt;/FooterTemplate&gt;
-		&lt;/asp:Repeater&gt;</value>
-  </data>
   <data name="toParentDirectory" xml:space="preserve">
-    <value>&lt;i class="fa fa-level-up-alt" /&gt; To Parent Directory</value>
+    <value>&lt;i class="fa fa-level-up-alt"&gt;&lt;/i&gt; To Parent Directory</value>
   </data>
 </root>

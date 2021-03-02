@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("BetterDirectoryListing")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Better Directory Listing Module for IIS")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("BetterDirectoryListing")]
