@@ -12,18 +12,25 @@ using System.Text.RegularExpressions;
 
 namespace MMS.BetterDirectoryListing {
 	/// <summary>
-	/// 
+	/// DirectoryBrowsingModule
 	/// </summary>
 	public class DirectoryBrowsingModule : IHttpModule {
-
-		public const string DirectoryBrowsingContextKey = "MMS.BetterDirectoryListing";
+		
+		/// <summary>
+		/// 
+		/// </summary>
 		public string ModuleName => "DirectoryBrowsingModule";
 		private string[] sensitiveItems = { "bin", "aspnet_client", "web.config" };
 
 		#region IHttpModule Members
-
+		/// <summary>
+		/// 
+		/// </summary>
 		public void Dispose() { }
-
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="context"></param>
 		public void Init(HttpApplication context) {
 			context.BeginRequest += OnBeginRequest;
 			context.PreRequestHandlerExecute += OnPreRequestHandlerExecute;
@@ -138,10 +145,9 @@ namespace MMS.BetterDirectoryListing {
 					listing.Add(new ListEntry(VirtualPathUtility.Combine(context.Request.Path + "/", Path.GetFileName(item)), item, false));
 				}
 
-				context.Items[DirectoryBrowsingContextKey] = listing;
-				context.Items["isRootAllowed"] = config.AllowRoot;
-
 				Template template = new Template();
+				template.ListEntries = listing;
+				template.IsRootAllowed = config.AllowRoot;
 				template.ProcessRequest(context);
 				context.Handler = null;
 			}

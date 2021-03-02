@@ -9,7 +9,13 @@ namespace MMS.BetterDirectoryListing {
 	/// 
 	/// </summary>
 	public class DirectoryBrowsingModuleConfigurationSection : ConfigurationSection {
+		/// <summary>
+		/// 
+		/// </summary>
 		public const bool DefaultEnabled = true;
+		/// <summary>
+		/// 
+		/// </summary>
 		public const string ConfigurationSectionName = "directoryBrowsing";
 
 		private static ConfigurationPropertyCollection _properties = new ConfigurationPropertyCollection();
@@ -23,20 +29,32 @@ namespace MMS.BetterDirectoryListing {
 			_properties.Add(_propAllowRoot);
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
 		protected override ConfigurationPropertyCollection Properties => _properties;
 
+		/// <summary>
+		/// 
+		/// </summary>
 		[ConfigurationProperty("enabled", DefaultValue = true)]
 		public bool Enabled {
 			get => (bool)base[_propEnabled];
 			set => base[_propEnabled] = value;
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
 		[ConfigurationProperty("hideSensitiveFiles", DefaultValue = true)]
 		public bool HideSensitiveFiles {
 			get => (bool)base[_propHideSensitiveFiles];
 			set => base[_propHideSensitiveFiles] = value;
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
 		[ConfigurationProperty("allowRoot", DefaultValue =false)]
 		public bool AllowRoot {
 			get => (bool)base[_propAllowRoot];

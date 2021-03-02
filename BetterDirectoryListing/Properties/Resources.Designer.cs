@@ -96,33 +96,7 @@ namespace MMS.BetterDirectoryListing.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;asp:Repeater ID=&quot;DirectoryListing&quot; runat=&quot;server&quot; EnableViewState=&quot;False&quot;&gt;
-        ///			&lt;HeaderTemplate&gt;
-        ///				&lt;table id=&quot;DirectoryListing&quot; style=&quot;width: 100%&quot;&gt;
-        ///					&lt;thead&gt;
-        ///						&lt;tr&gt;
-        ///							&lt;th&gt;Name&lt;/th&gt;
-        ///							&lt;th&gt;Created&lt;/th&gt;
-        ///							&lt;th&gt;Last Modified&lt;/th&gt;
-        ///							&lt;th&gt;Size&lt;/th&gt;
-        ///						&lt;/tr&gt;
-        ///					&lt;/thead&gt;
-        ///						&lt;tbody&gt;
-        ///			&lt;/HeaderTemplate&gt;
-        ///			&lt;ItemTemplate&gt;
-        ///				&lt;tr&gt;
-        ///					&lt;td&gt;
-        ///						&lt;i class=&quot;far fa-&lt;%# GetFileIconCss(Path.GetExtension(((ListEntry)Container.DataItem).Path)) %&gt;&quot;&gt;&lt;/i&gt;
-        ///						&lt;a href=&quot;&lt;%#  [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string rptMain {
-            get {
-                return ResourceManager.GetString("rptMain", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;i class=&quot;fa fa-level-up-alt&quot; /&gt; To Parent Directory.
+        ///   Looks up a localized string similar to &lt;i class=&quot;fa fa-level-up-alt&quot;&gt;&lt;/i&gt; To Parent Directory.
         /// </summary>
         internal static string toParentDirectory {
             get {

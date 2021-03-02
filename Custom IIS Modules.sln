@@ -5,30 +5,7 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterDirectoryListing", "BetterDirectoryListing\BetterDirectoryListing.csproj", "{635C41E2-9BF9-42D7-B505-757ED2CDDEE9}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://dirbro.local", "http://dirbro.local", "{10584E09-DAFC-4BE2-8B04-F66E1EDED1EF}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "false"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		Debug.AspNetCompiler.VirtualPath = "/dirbro.local"
-		Debug.AspNetCompiler.PhysicalPath = "DirectoryBrowsingTestSite\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\dirbro.local\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/dirbro.local"
-		Release.AspNetCompiler.PhysicalPath = "DirectoryBrowsingTestSite\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\dirbro.local\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "DirectoryBrowsingTestSite\"
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemporaryProject", "TemporaryProject\TemporaryProject.csproj", "{3BE4AF98-A882-439C-9B71-157B9F2C633F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemporaryConsoleApp", "TemporaryConsoleApp\TemporaryConsoleApp.csproj", "{EF9AE061-170D-456D-B88F-EC3245E19CCE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example Web Application", "Example Web Application\Example Web Application.csproj", "{F1E9315A-27AC-43B4-BDFA-50A674F02892}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,18 +17,10 @@ Global
 		{635C41E2-9BF9-42D7-B505-757ED2CDDEE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{635C41E2-9BF9-42D7-B505-757ED2CDDEE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{635C41E2-9BF9-42D7-B505-757ED2CDDEE9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{10584E09-DAFC-4BE2-8B04-F66E1EDED1EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{10584E09-DAFC-4BE2-8B04-F66E1EDED1EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{10584E09-DAFC-4BE2-8B04-F66E1EDED1EF}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{10584E09-DAFC-4BE2-8B04-F66E1EDED1EF}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{3BE4AF98-A882-439C-9B71-157B9F2C633F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3BE4AF98-A882-439C-9B71-157B9F2C633F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3BE4AF98-A882-439C-9B71-157B9F2C633F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3BE4AF98-A882-439C-9B71-157B9F2C633F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF9AE061-170D-456D-B88F-EC3245E19CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF9AE061-170D-456D-B88F-EC3245E19CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF9AE061-170D-456D-B88F-EC3245E19CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF9AE061-170D-456D-B88F-EC3245E19CCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1E9315A-27AC-43B4-BDFA-50A674F02892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1E9315A-27AC-43B4-BDFA-50A674F02892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1E9315A-27AC-43B4-BDFA-50A674F02892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1E9315A-27AC-43B4-BDFA-50A674F02892}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

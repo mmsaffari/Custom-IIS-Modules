@@ -12,12 +12,15 @@ using System.Web.UI.WebControls;
 namespace MMS.BetterDirectoryListing {
 	class Template : Page {
 
+		public ListEntryCollection ListEntries { get; set; }
+		public bool IsRootAllowed { get; set; }
+
 		HyperLink hlNavigateUp = new HyperLink();
 		Repeater rptMain = new Repeater();
-		//Label FileCount = new Label();
 
 		protected override void OnInit(EventArgs e) {
 			base.OnInit(e);
+			AppRelativeVirtualPath = VirtualPathUtility.AppendTrailingSlash(Context.Request.Path);
 			Controls.Clear();
 			var html = new HtmlHtml();
 			var head = new HtmlHead();
@@ -47,7 +50,18 @@ namespace MMS.BetterDirectoryListing {
 			topDiv.Controls.Add(hlNavigateUp);
 			body.Controls.Add(topDiv);
 			HtmlForm form = new HtmlForm();
-			rptMain = ParseControl(Properties.Resources.rptMain) as Repeater;
+
+			var tbRptHead = new TemplateBuilder();
+			tbRptHead.AppendLiteralString("<table id=\"DirectoryListing\" style=\"width: 100%\"><thead><tr><th>Name</th><th>Created</th><th>Last Modified</th><th>Size</th></tr></thead><tbody>");
+
+			rptMain.ItemDataBound += RptMain_ItemDataBound;
+
+			var tbRptFoot = new TemplateBuilder();
+			tbRptFoot.AppendLiteralString("</tbody></table>");
+
+			rptMain.HeaderTemplate = tbRptHead;
+			rptMain.FooterTemplate = tbRptFoot;
+
 			form.Controls.Add(rptMain);
 			body.Controls.Add(form);
 			#endregion
@@ -62,17 +76,18 @@ namespace MMS.BetterDirectoryListing {
 			html.Controls.Add(body);
 			Controls.Add(html);
 		}
+
 		void Page_Load() {
-			ListEntryCollection listEntries = Context.Items[DirectoryBrowsingModule.DirectoryBrowsingContextKey] as ListEntryCollection;
-			bool isRootAllowed = (bool)Context.Items["isRootAllowed"];
+			rptMain.DataSource = ListEntries;
+			rptMain.DataBind();
 
 			var path = VirtualPathUtility.AppendTrailingSlash(Context.Request.Path);
-			string parentPath = null;
+			string parentPath;
 			if (path.Equals("/") || path.Equals(VirtualPathUtility.AppendTrailingSlash(HttpRuntime.AppDomainAppVirtualPath))) {
 				parentPath = null;
 			} else {
 				parentPath = VirtualPathUtility.Combine(path, "..");
-				if (!isRootAllowed && parentPath.Equals("/")) parentPath = null;
+				if (!IsRootAllowed && parentPath.Equals("/")) parentPath = null;
 			}
 			if (string.IsNullOrEmpty(parentPath)) {
 				hlNavigateUp.Visible = false;
@@ -82,17 +97,87 @@ namespace MMS.BetterDirectoryListing {
 			}
 		}
 
+		private void RptMain_ItemDataBound(object sender, RepeaterItemEventArgs e) {
+			var data = e.Item.DataItem as ListEntry;
+			if (data == null) return;
+			var item = e.Item;
+			var tr = new HtmlTableRow { };
+
+			tr.Cells.Add(new HtmlTableCell { InnerHtml = string.Format("<i class=\"far fa-{0}\"></i><a href=\"{1}\">{2}</a>", GetIconCss(data), GetUrl(data), data.Filename) });
+			tr.Cells.Add(new HtmlTableCell { InnerText = data.FileInfo.CreationTime.ToString("yyyy-MM-dd HH:mm:ss") });
+			tr.Cells.Add(new HtmlTableCell { InnerText = data.FileInfo.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss") });
+			tr.Cells.Add(new HtmlTableCell { InnerText = !data.IsDirectory ? GetSize(data.FileInfo) : "" });
+			item.Controls.Add(tr);
+
+		}
+
+
 		#region Methods
-		string GetPath() {
+		private string GetPath() {
 			string currentFolder = "";
 			string[] foldersArray = Context.Request.Path.Split("/".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
 			if (foldersArray.Length > 0) currentFolder = foldersArray[foldersArray.Length - 1];
 			if (string.IsNullOrWhiteSpace(currentFolder)) currentFolder = Context.Request.Url.AbsolutePath;
 			return currentFolder;
 		}
+
+		private string GetSize(FileSystemInfo info) {
+			string result = "Not Available";
+			string[] SizeSuffixes = { "B", "KB", "MB", "GB", "TB" };
+
+			if (info is FileInfo) {
+				var fi = info as FileInfo;
+				long size = fi.Length;
+				int counter = 0;
+				double dSize = size; ;
+				while (dSize > 1024) {
+					dSize /= 1024;
+					counter++;
+				}
+				result = string.Format("{0:.##} {1}", dSize, SizeSuffixes[counter]);
+			}
+			return result;
+		}
+
+		private object GetIconCss(ListEntry entry) {
+			var path = entry.Path;
+			string iconCss = "";
+			if (entry.IsDirectory) {
+				iconCss = "folder";
+			} else {
+				string extn = Path.GetExtension(path);
+				switch (extn) {
+					case ".pdf": iconCss = "file-pdf"; break;
+					case ".docx":
+					case ".doc": iconCss = "file-word"; break;
+					case ".xlsx":
+					case ".xls": iconCss = "file-excel"; break;
+					case ".txt": iconCss = "file-alt"; break;
+					default: iconCss = "file"; break;
+				}
+			}
+			return iconCss;
+		}
+
+		private string GetUriPrefix(string fileExtension) {
+			fileExtension = fileExtension.ToLower();
+			if (fileExtension.Equals(".docx") || fileExtension.Equals(".doc")) return "ms-word:ofv|u|";
+			if (fileExtension.Equals(".xls") || fileExtension.Equals(".xlsx")) return "ms-excel:ofv|u|";
+			if (fileExtension.Equals(".ppt") || fileExtension.Equals(".pptx")) return "ms-powerpoint:ofv|u|";
+			return "";
+		}
+
+		private object GetUrl(ListEntry entry) {
+			string extension = Path.GetExtension(entry.Path);
+			string uriPrefix = GetUriPrefix(extension);
+			string baseUrl = Request.Url.Scheme + "://" + Request.Url.Authority + Request.ApplicationPath.TrimEnd('/');
+			string hyperlink = uriPrefix + baseUrl + entry.VirtualPath;
+			return hyperlink;
+		}
 		#endregion
 	}
 
+	#region HTML Tag Classes
 	class HtmlHtml : HtmlContainerControl {
 		public HtmlHtml() : base("html") { }
 	}
@@ -122,4 +207,5 @@ namespace MMS.BetterDirectoryListing {
 			writer.Write("</script>");
 		}
 	}
+	#endregion
 }
